@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        ArbolInventario inventario = new ArbolInventario();
+        Scanner sc = new Scanner(System.in); 
+        ArbolInventario inventario = new ArbolInventario(); // Crear instancia del árbol de inventario
         int opcion;
 
         do {
@@ -16,7 +16,7 @@ public class Main {
             System.out.println("0. Salir");
             System.out.print("Seleccione una opción: ");
 
-            if (sc.hasNextInt()) {
+            if (sc.hasNextInt()) {  // Verificar que la entrada sea un número
     opcion = sc.nextInt();
             } else {
             System.out.println("Error: Debe ingresar un número.");
@@ -35,7 +35,7 @@ public class Main {
                     System.out.print("Digite el ID del producto: ");
 
                     if (sc.hasNextInt()) {
-                    id = sc.nextInt();
+                    id = sc.nextInt(); // Validar que el ID sea un número entero
                     sc.nextLine();
                     break;
                     } else {
@@ -47,7 +47,7 @@ public class Main {
                     System.out.print("Digite el nombre del producto: ");
                     String nombre = sc.nextLine();
 
-                    inventario.insertar(id, nombre);
+                    inventario.insertar(id, nombre);  // Insertar producto en el árbol
                     System.out.println("Producto registrado correctamente.");
                     break;
 
@@ -70,7 +70,7 @@ public class Main {
                     }
                     }
 
-                    Producto encontrado = inventario.buscar(idBuscar);
+                    Producto encontrado = inventario.buscar(idBuscar); // Buscar producto por ID
 
                     if (encontrado != null) {
                         System.out.println("Producto encontrado:");
