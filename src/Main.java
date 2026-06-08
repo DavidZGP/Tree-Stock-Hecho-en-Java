@@ -49,3 +49,17 @@ public class Main {
                         System.out.println("No existe un producto con ese ID.");
                     }
                     break; 
+                
+                case 0:
+                    System.out.println("Saliendo del sistema...");
+                    break;
+
+                default:
+                    System.out.println("Opción inválida. Intente de nuevo.");
+            }
+
+        } while (opcion != 0);
+
+        sc.close();
+    }
+}
