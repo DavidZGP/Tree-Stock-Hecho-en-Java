@@ -54,3 +54,12 @@ public class ArbolInventario {
             return null;
         }
     
+        if (id == actual.id) {
+            return actual;
+        } else if (id < actual.id) {
+            return buscarRec(actual.izquierdo, id);
+        } else {
+            return buscarRec(actual.derecho, id);
+        }
+    }
+}
