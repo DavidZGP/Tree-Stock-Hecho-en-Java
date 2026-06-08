@@ -16,14 +16,33 @@ public class Main {
             System.out.println("0. Salir");
             System.out.print("Seleccione una opción: ");
 
-            opcion = sc.nextInt();
-            sc.nextLine(); // limpiar buffer
+            if (sc.hasNextInt()) {
+    opcion = sc.nextInt();
+            } else {
+            System.out.println("Error: Debe ingresar un número.");
+            sc.nextLine(); // limpia la entrada incorrecta
+            opcion = -1;
+            continue;
+            }
+
+        sc.nextLine(); // limpiar buffer
             
              switch (opcion) {
                 case 1:
+                    int id;
+
+                    while (true) {
                     System.out.print("Digite el ID del producto: ");
-                    int id = sc.nextInt();
-                    sc.nextLine(); // limpiar buffer
+
+                    if (sc.hasNextInt()) {
+                    id = sc.nextInt();
+                    sc.nextLine();
+                    break;
+                    } else {
+                    System.out.println("Error: El ID debe ser numérico.");
+                    sc.nextLine();
+                    }
+                    }
 
                     System.out.print("Digite el nombre del producto: ");
                     String nombre = sc.nextLine();
@@ -37,8 +56,19 @@ public class Main {
                     break;
 
                 case 3:
+                    int idBuscar;
+
+                    while (true) {
                     System.out.print("Digite el ID a buscar: ");
-                    int idBuscar = sc.nextInt();
+
+                    if (sc.hasNextInt()) {
+                        idBuscar = sc.nextInt();
+                        break;
+                    } else {
+                        System.out.println("Error: Debe ingresar un número.");
+                        sc.nextLine();
+                    }
+                    }
 
                     Producto encontrado = inventario.buscar(idBuscar);
 
