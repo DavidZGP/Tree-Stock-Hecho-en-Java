@@ -44,4 +44,13 @@ public class ArbolInventario {
         }
     }
 
+     // Buscar producto por ID
+    public Producto buscar(int id) {
+        return buscarRec(raiz, id);
+    }
+
+    private Producto buscarRec(Producto actual, int id) {
+        if (actual == null) {
+            return null;
+        }
     
