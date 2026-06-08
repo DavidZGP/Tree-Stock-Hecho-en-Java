@@ -24,3 +24,13 @@ public class ArbolInventario {
 
         return actual;
     }
+
+     // Recorrido inorden para mostrar ordenado por ID
+    public void mostrarInorden() {
+        if (raiz == null) {
+            System.out.println("El inventario está vacío.");
+        } else {
+            System.out.println("\nInventario ordenado:");
+            inordenRec(raiz);
+        }
+    }
