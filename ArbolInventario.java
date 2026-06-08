@@ -34,3 +34,13 @@ public class ArbolInventario {
             inordenRec(raiz);
         }
     }
+
+    private void inordenRec(Producto actual) {
+        if (actual != null) {
+            inordenRec(actual.izquierdo);
+            System.out.println("ID: " + actual.id + " | Nombre: " + actual.nombre);
+            inordenRec(actual.derecho);
+        }
+    }
+
+    
